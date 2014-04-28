@@ -1,0 +1,112 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#25292c"
+            tools:context="ru.futurobot.pikabudesignsample.NavigationDrawerFragment">
+
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <!--User item-->
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:orientation="horizontal"
+                android:background="#1f2326"
+                >
+
+            <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginBottom="4dp"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/serega"/>
+
+            <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                    android:text="Kamaha"
+                    style="@style/NavigationTextViewStyle"/>
+
+            <View
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"/>
+
+            <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/ic_navigation_expand"/>
+
+        </LinearLayout>
+
+        <!--Other items-->
+        <LinearLayout
+                style="@style/NavigationItemLayoutStyle">
+
+            <ImageView
+                    android:src="@drawable/ic_launcher"
+                    style="@style/NavigationIconStyle"/>
+
+            <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                    android:text="Горячее"
+                    style="@style/NavigationTextViewStyle"/>
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/NavigationItemLayoutStyle">
+
+            <ImageView
+                    android:src="@drawable/ic_launcher"
+                    style="@style/NavigationIconStyle"/>
+
+            <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                    android:text="Лучшее"
+                    style="@style/NavigationTextViewStyle"/>
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/NavigationItemLayoutStyle">
+
+            <ImageView
+                    android:src="@drawable/ic_launcher"
+                    style="@style/NavigationIconStyle"/>
+
+            <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                    android:text="Свежее"
+                    style="@style/NavigationTextViewStyle"/>
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/NavigationItemLayoutStyle">
+
+            <ImageView
+                    android:src="@drawable/ic_launcher"
+                    style="@style/NavigationIconStyle"/>
+
+            <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                    android:text="Обсуждаемое"
+                    style="@style/NavigationTextViewStyle"/>
+        </LinearLayout>
+
+        <LinearLayout
+                style="@style/NavigationItemLayoutStyle">
+
+            <ImageView
+                    android:src="@drawable/ic_launcher"
+                    style="@style/NavigationIconStyle"/>
+
+            <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                    android:text="Оффлайн доступ"
+                    style="@style/NavigationTextViewStyle"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+</ScrollView>

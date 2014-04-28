@@ -1,0 +1,44 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="android:actionBarStyle">@style/PikabuActionBar</item>
+        <item name="actionBarStyle">@style/PikabuActionBar</item>
+
+        <!--TRANSCLUCENT-->
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="PikabuActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
+        <item name="background">@color/pikabu_green</item>
+        <item name="android:background">@color/pikabu_green</item>
+        <item name="backgroundSplit">@color/pikabu_green</item>
+        <item name="android:backgroundSplit">@color/pikabu_green</item>
+    </style>
+
+    <style name="NavigationTextViewStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">#929397</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:textSize">14sp</item>
+        <item name="ru.futurobot.pikabudesignsample:custom_font">"Roboto-Regular.ttf"</item>
+    </style>
+
+    <style name="NavigationItemLayoutStyle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">#25292c</item>
+    </style>
+
+    <style name="NavigationIconStyle">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:padding">12dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
+    </style>
+
+</resources>
