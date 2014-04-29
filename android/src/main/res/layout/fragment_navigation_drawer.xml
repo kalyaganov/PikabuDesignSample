@@ -1,6 +1,5 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
-            xmlns:app="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#25292c"
@@ -14,97 +13,172 @@
         <!--User item-->
         <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="56dp"
+                android:layout_height="65dp"
                 android:orientation="horizontal"
                 android:background="#1f2326"
+                android:id="@+id/user_info_item"
                 >
 
             <ImageView
                     android:layout_width="48dp"
                     android:layout_height="48dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="8dp"
                     android:layout_marginRight="10dp"
                     android:layout_marginTop="4dp"
                     android:layout_marginBottom="4dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/serega"/>
+                    android:src="@drawable/avatar"/>
 
             <ru.futurobot.pikabudesignsample.controls.TextViewPlus
-                    android:text="Kamaha"
-                    style="@style/NavigationTextViewStyle"/>
+                    android:text="Sergey Kamashkin"
+                    style="@style/NavigationTextViewStyle"
+                    android:textColor="#858585"
+                    android:textSize="18dp"/>
 
             <View
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"/>
+                    android:layout_weight="4"/>
 
             <ImageView
+                    android:id="@+id/user_info_nav_arrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:paddingRight="20dp"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_navigation_expand"/>
 
         </LinearLayout>
 
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/user_info_expanded_info"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <LinearLayout
+                    style="@style/NavigationItemLayoutStyle"
+                    android:layout_height="53dp"
+                    android:paddingLeft="5dp">
+
+                <ImageView
+                        android:src="@drawable/ic_nm_hot"
+                        style="@style/NavigationIconStyle"/>
+
+                <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                        android:text="Item 1"
+                        style="@style/NavigationTextViewStyle"
+                        android:textColor="#949599"
+                        android:textSize="17dp"
+                        android:layout_marginLeft="2dp"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    style="@style/NavigationItemLayoutStyle"
+                    android:layout_height="53dp"
+                    android:paddingLeft="5dp">
+
+                <ImageView
+                        android:src="@drawable/ic_nm_hot"
+                        style="@style/NavigationIconStyle"/>
+
+                <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+                        android:text="Item 2"
+                        style="@style/NavigationTextViewStyle"
+                        android:textColor="#949599"
+                        android:textSize="17dp"
+                        android:layout_marginLeft="2dp"/>
+            </LinearLayout>
+
+        </LinearLayout>
+
         <!--Other items-->
         <LinearLayout
-                style="@style/NavigationItemLayoutStyle">
+                style="@style/NavigationItemLayoutStyle"
+                android:layout_height="53dp"
+                android:paddingLeft="5dp">
 
             <ImageView
-                    android:src="@drawable/ic_launcher"
+                    android:src="@drawable/ic_nm_hot"
                     style="@style/NavigationIconStyle"/>
 
             <ru.futurobot.pikabudesignsample.controls.TextViewPlus
                     android:text="Горячее"
-                    style="@style/NavigationTextViewStyle"/>
+                    style="@style/NavigationTextViewStyle"
+                    android:textColor="#949599"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="2dp"/>
         </LinearLayout>
 
         <LinearLayout
-                style="@style/NavigationItemLayoutStyle">
+                style="@style/NavigationItemLayoutStyle"
+                android:layout_height="53dp"
+                android:paddingLeft="5dp">
 
             <ImageView
-                    android:src="@drawable/ic_launcher"
+                    android:src="@drawable/ic_nm_best"
                     style="@style/NavigationIconStyle"/>
 
             <ru.futurobot.pikabudesignsample.controls.TextViewPlus
                     android:text="Лучшее"
-                    style="@style/NavigationTextViewStyle"/>
+                    style="@style/NavigationTextViewStyle"
+                    android:textSize="17dp"
+                    android:textColor="#949599"
+                    android:layout_marginLeft="2dp"/>
+            android:textColor="#949599"
+            android:textSize="17dp" />
         </LinearLayout>
 
         <LinearLayout
-                style="@style/NavigationItemLayoutStyle">
+                style="@style/NavigationItemLayoutStyle"
+                android:layout_height="53dp"
+                android:paddingLeft="5dp">
 
             <ImageView
-                    android:src="@drawable/ic_launcher"
+                    android:src="@drawable/ic_nm_fresh"
                     style="@style/NavigationIconStyle"/>
 
             <ru.futurobot.pikabudesignsample.controls.TextViewPlus
                     android:text="Свежее"
-                    style="@style/NavigationTextViewStyle"/>
+                    style="@style/NavigationTextViewStyle"
+                    android:textSize="17dp"
+                    android:textColor="#949599"
+                    android:layout_marginLeft="2dp"/>
         </LinearLayout>
 
         <LinearLayout
-                style="@style/NavigationItemLayoutStyle">
+                style="@style/NavigationItemLayoutStyle"
+                android:layout_height="53dp"
+                android:paddingLeft="5dp">
 
             <ImageView
-                    android:src="@drawable/ic_launcher"
+                    android:src="@drawable/ic_nm_com"
                     style="@style/NavigationIconStyle"/>
 
             <ru.futurobot.pikabudesignsample.controls.TextViewPlus
                     android:text="Обсуждаемое"
-                    style="@style/NavigationTextViewStyle"/>
+                    style="@style/NavigationTextViewStyle"
+                    android:textSize="17dp"
+                    android:textColor="#949599"
+                    android:layout_marginLeft="2dp"/>
         </LinearLayout>
 
         <LinearLayout
-                style="@style/NavigationItemLayoutStyle">
+                style="@style/NavigationItemLayoutStyle"
+                android:layout_height="53dp"
+                android:paddingLeft="5dp">
 
             <ImageView
-                    android:src="@drawable/ic_launcher"
+                    android:src="@drawable/ic_nm_offline"
                     style="@style/NavigationIconStyle"/>
 
             <ru.futurobot.pikabudesignsample.controls.TextViewPlus
                     android:text="Оффлайн доступ"
-                    style="@style/NavigationTextViewStyle"/>
+                    style="@style/NavigationTextViewStyle"
+                    android:textSize="17dp"
+                    android:textColor="#949599"
+                    android:layout_marginLeft="2dp"/>
         </LinearLayout>
     </LinearLayout>
 

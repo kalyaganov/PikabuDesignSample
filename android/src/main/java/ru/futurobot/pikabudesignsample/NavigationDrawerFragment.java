@@ -1,24 +1,22 @@
 package ru.futurobot.pikabudesignsample;
 
-import android.os.Build;
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
-import android.support.v7.app.ActionBar;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.ActionBarDrawerToggle;
-import android.support.v4.view.GravityCompat;
-import android.support.v4.widget.DrawerLayout;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.*;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBarActivity;
+import android.view.*;
+import android.widget.ImageView;
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
 /**
  * Fragment used for managing interactions for and presentation of a navigation drawer.
@@ -38,6 +36,8 @@ public class NavigationDrawerFragment extends Fragment {
      */
     private static final String PREF_USER_LEARNED_DRAWER = "navigation_drawer_learned";
 
+    private static final String USER_EXPANDED_SHOW = "user_expanded_show";
+
     /**
      * A pointer to the current callbacks instance (the Activity).
      */
@@ -51,9 +51,18 @@ public class NavigationDrawerFragment extends Fragment {
     private DrawerLayout mDrawerLayout;
     private View mFragmentContainerView;
 
+    @InjectView(R.id.user_info_expanded_info)
+    View userExpandableView;
+
+    @InjectView(R.id.user_info_nav_arrow)
+    ImageView userItemNavigationArrowImage;
+
+    private int userExpandableViewVisibleState = View.GONE;
+
     private int mCurrentSelectedPosition = 0;
     private boolean mFromSavedInstanceState;
     private boolean mUserLearnedDrawer;
+
 
     public NavigationDrawerFragment() {
     }
@@ -77,7 +86,7 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     @Override
-    public void onActivityCreated (Bundle savedInstanceState) {
+    public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         // Indicate that this fragment would like to influence the set of actions in the action bar.
         setHasOptionsMenu(true);
@@ -85,17 +94,29 @@ public class NavigationDrawerFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.fragment_navigation_drawer,container,false);
+                             Bundle savedInstanceState) {
+        return inflater.inflate(R.layout.fragment_navigation_drawer, container, false);
     }
 
-    public int getStatusBarHeight() {
-        int result = 0;
-        int resourceId = getResources().getIdentifier("status_bar_height", "dimen", "android");
-        if (resourceId > 0) {
-            result = getResources().getDimensionPixelSize(resourceId);
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        ButterKnife.inject(this, view);
+        if(savedInstanceState != null){
+            userExpandableViewVisibleState = savedInstanceState.getInt(USER_EXPANDED_SHOW, View.GONE);
         }
-        return result;
+        switchUserInfoPanel(userExpandableViewVisibleState);
+    }
+
+    @OnClick(R.id.user_info_item)
+    public void expandUserInfo() {
+        userExpandableViewVisibleState = userExpandableViewVisibleState == View.GONE ? View.VISIBLE : View.GONE;
+        switchUserInfoPanel(userExpandableViewVisibleState);
+    }
+
+    private void switchUserInfoPanel(int visibilityState){
+        userExpandableView.setVisibility(userExpandableViewVisibleState);
+        userItemNavigationArrowImage.setImageResource(userExpandableViewVisibleState == View.GONE ? R.drawable.ic_navigation_expand : R.drawable.ic_navigation_collapse);
     }
 
     public boolean isDrawerOpen() {
@@ -213,9 +234,16 @@ public class NavigationDrawerFragment extends Fragment {
     }
 
     @Override
+    public void onDestroyView() {
+        ButterKnife.reset(this);
+        super.onDestroyView();
+    }
+
+    @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putInt(STATE_SELECTED_POSITION, mCurrentSelectedPosition);
+        outState.putInt(USER_EXPANDED_SHOW, userExpandableViewVisibleState);
     }
 
     @Override
