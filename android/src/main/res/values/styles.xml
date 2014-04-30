@@ -6,9 +6,16 @@
         <item name="android:actionBarStyle">@style/PikabuActionBar</item>
         <item name="actionBarStyle">@style/PikabuActionBar</item>
 
+        <item name="android:actionDropDownStyle">@style/PikabuActionBarSpinner</item>
+        <item name="actionDropDownStyle">@style/PikabuActionBarSpinner</item>
+
         <!--TRANSCLUCENT-->
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
+    </style>
+
+    <style name="PikabuActionBarSpinner" parent="@style/Widget.AppCompat.Spinner.DropDown.ActionBar">
+        <item name="android:background">@null</item>
     </style>
 
     <style name="PikabuActionBar" parent="@style/Widget.AppCompat.Light.ActionBar.Solid.Inverse">
@@ -16,6 +23,39 @@
         <item name="android:background">@color/pikabu_green</item>
         <item name="backgroundSplit">@color/pikabu_green</item>
         <item name="android:backgroundSplit">@color/pikabu_green</item>
+
+        <item name="android:titleTextStyle">@style/PikabuActionBarTitleTextStyle</item>
+        <item name="titleTextStyle">@style/PikabuActionBarTitleTextStyle</item>
+
+        <item name="android:subtitleTextStyle">@style/PikabuActionBarSubTitleTextStyle</item>
+        <item name="subtitleTextStyle">@style/PikabuActionBarSubTitleTextStyle</item>
+    </style>
+
+    <style name="PikabuActionBarTitleText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/abc_action_bar_title_text_size</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="PikabuActionBarSubTitleText" parent="@android:style/Widget.TextView">
+        <item name="android:textSize">@dimen/abc_action_bar_subtitle_text_size</item>
+        <item name="android:layout_marginBottom">@dimen/abc_action_bar_subtitle_bottom_margin</item>
+        <item name="android:layout_marginTop">@dimen/abc_action_bar_subtitle_top_margin</item>
+        <item name="android:ellipsize">end</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <style name="PikabuActionBarTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">"sans-serif-light"</item>
+    </style>
+
+    <style name="PikabuActionBarSubTitleTextStyle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:fontFamily">"sans-serif-light"</item>
     </style>
 
     <style name="NavigationTextViewStyle">

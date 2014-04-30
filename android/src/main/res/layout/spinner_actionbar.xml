@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:layout_gravity="center_vertical|left">
+
+    <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+            style="?actionBarTitleText"
+            android:id="@android:id/text1"
+            android:text="Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:custom_font="Roboto-Thin.ttf"/>
+
+    <ru.futurobot.pikabudesignsample.controls.TextViewPlus
+            style="?actionBarSubTitleText"
+            android:id="@android:id/text2"
+            android:text="Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:custom_font="Roboto-Thin.ttf"/>
+</LinearLayout>

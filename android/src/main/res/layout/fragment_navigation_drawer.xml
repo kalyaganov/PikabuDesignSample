@@ -44,7 +44,7 @@
                     android:id="@+id/user_info_nav_arrow"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:paddingRight="20dp"
+                    android:layout_marginRight="20dp"
                     android:layout_gravity="center_vertical"
                     android:src="@drawable/ic_navigation_expand"/>
 
@@ -60,7 +60,7 @@
             <LinearLayout
                     style="@style/NavigationItemLayoutStyle"
                     android:layout_height="53dp"
-                    android:paddingLeft="5dp">
+                    android:paddingLeft="20dp">
 
                 <ImageView
                         android:src="@drawable/ic_nm_hot"
@@ -77,7 +77,7 @@
             <LinearLayout
                     style="@style/NavigationItemLayoutStyle"
                     android:layout_height="53dp"
-                    android:paddingLeft="5dp">
+                    android:paddingLeft="20dp">
 
                 <ImageView
                         android:src="@drawable/ic_nm_hot"

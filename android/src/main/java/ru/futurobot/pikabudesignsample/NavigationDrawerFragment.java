@@ -13,6 +13,8 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.ActionBarActivity;
 import android.view.*;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import butterknife.ButterKnife;
 import butterknife.InjectView;
@@ -23,7 +25,7 @@ import butterknife.OnClick;
  * See the <a href="https://developer.android.com/design/patterns/navigation-drawer.html#Interaction">
  * design guidelines</a> for a complete explanation of the behaviors implemented here.
  */
-public class NavigationDrawerFragment extends Fragment {
+public class NavigationDrawerFragment extends BaseFragment {
 
     /**
      * Remember the position of the selected item.
@@ -114,9 +116,35 @@ public class NavigationDrawerFragment extends Fragment {
         switchUserInfoPanel(userExpandableViewVisibleState);
     }
 
-    private void switchUserInfoPanel(int visibilityState){
-        userExpandableView.setVisibility(userExpandableViewVisibleState);
-        userItemNavigationArrowImage.setImageResource(userExpandableViewVisibleState == View.GONE ? R.drawable.ic_navigation_expand : R.drawable.ic_navigation_collapse);
+    private void switchUserInfoPanel(final int visibilityState){
+        userExpandableView.setVisibility(visibilityState);
+
+
+        userItemNavigationArrowImage.setImageResource(visibilityState == View.GONE ? R.drawable.ic_navigation_expand : R.drawable.ic_navigation_collapse);
+        //userItemNavigationArrowImage.animate();
+
+//        Animation animation = AnimationUtils.loadAnimation(getActivity(), R.anim.rotate);
+//        userItemNavigationArrowImage.setAnimation(animation);
+//        animation.setAnimationListener(new Animation.AnimationListener() {
+//            @Override
+//            public void onAnimationStart(Animation animation) {
+//
+//            }
+//
+//            @Override
+//            public void onAnimationEnd(Animation animation) {
+//                if(userItemNavigationArrowImage != null){
+//                    userItemNavigationArrowImage.setImageResource(visibilityState == View.GONE ? R.drawable.ic_navigation_expand : R.drawable.ic_navigation_collapse);
+//                    userItemNavigationArrowImage.clearAnimation();
+//                }
+//            }
+//
+//            @Override
+//            public void onAnimationRepeat(Animation animation) {
+//
+//            }
+//        });
+
     }
 
     public boolean isDrawerOpen() {
@@ -195,16 +223,6 @@ public class NavigationDrawerFragment extends Fragment {
         });
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-//
-//        //Move navigation drawer
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-//            DrawerLayout.LayoutParams lp = (DrawerLayout.LayoutParams) getView().getLayoutParams();
-//            lp.setMargins(0, lp.topMargin + getStatusBarHeight(), 0, 0);
-//            getView().setLayoutParams(lp);
-//        }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
-            getView().setPadding(0, ((MainActivity) getActivity()).tintManager.getConfig().getPixelInsetTop(true), 0, 0);
-        }
     }
 
     private void selectItem(int position) {

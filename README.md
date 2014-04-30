@@ -4,4 +4,4 @@ PikabuDesignSample
 Simple sample design of android pikabu app
 
 
-![screenshot](screenshot.png "screenshot")
+![screenshot](misc/screenshot.png "screenshot")

@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <attr name="actionBarTitleText" format="reference"/>
+    <attr name="actionBarSubTitleText" format="reference"/>
+
     <!--Styleable-->
     <declare-styleable name="TextViewPlus">
         <attr name="custom_font" format="string" />

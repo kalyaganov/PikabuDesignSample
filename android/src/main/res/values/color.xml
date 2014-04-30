@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="pikabu_green">#52b252</color>
+    <color name="pikabu_green">#4ba14b</color>
 
     <drawable name="user_item_bg">#1f2326</drawable>
     <drawable name="user_item_selected_bg">#0ab7ef</drawable>
